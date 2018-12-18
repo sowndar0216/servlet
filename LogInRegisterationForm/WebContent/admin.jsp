@@ -13,12 +13,18 @@
 	String password=request.getParameter("password");
 	
 	while(rs.next()!=false) {
-	if(rs.getString(4).equals(email))	
+	if(rs.getString(4).equals(email))	{
 		out.print(rs.getString(2)+" "+rs.getString(3)  );
+		}
+
 	}
+	ResultSet set=ps.executeQuery();
 
-	
+	out.print(set.next());
+while(set.next()!=false){
+	out.println(set.getString(1)+" "+set.getString(2)+" "+set.getString(3));
 
+}
 
 %>
 <br></br>
